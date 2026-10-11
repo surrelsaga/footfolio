@@ -1,4 +1,4 @@
-# Fog Walk map (map-MVP)
+# footfolio (map-MVP)
 
 A map covered in fog that clears where you walk, with quests written by Gemma on the phone. Part of a Hacktoberfest "Touch Grass" entry; the challenge brief and deadline are in `../walking-maxxing/CLAUDE.md`. The brand hook is **walking made more interesting**, and the screen should be the shortest part of the experience.
 

@@ -1,4 +1,4 @@
-# Fog Walk: everything you need to write the DEV post
+# footfolio: everything you need to write the DEV post
 
 This is a **fact sheet, not the post**. It collects what was built, why, with what, and the numbers, from this repo and from the six Claude Code sessions in `map-MVP` and `walking-maxxing`. It does not write your answers. The parts only you can supply (the walk itself, how it felt, who tried it) are listed at the end.
 
@@ -15,7 +15,7 @@ Read on 2026-10-11 (~10:40 SGT). The deadline is **2026-10-11 11:59 PM PDT = 202
 4. **The docs were brought up to date on 2026-10-11:** `README.md`, `PLAN.md` (condensed; older detail is in git history), `GEMMA.md` (now covers riddles, wisp, badges, legends, trails and the CPU fallback) and `CLAUDE.md` describe the current build.
 5. **AI disclosure.** You built this with Claude Code. DEV has rules for disclosing AI assistance in a post; check the current rule and the template's disclosure field (the DevRelay `devrelay-knowledge` skill has the DEV guidelines).
 6. **Teammates.** Git shows commits by "Daniel Nguyen" (two accounts, 34 commits) and "Jared" (1 commit). A team post is published by one person who credits teammates by DEV username in the body; decide who to credit.
-7. **The name.** `CLAUDE.md` says "Fog Walk (working name)"; the README title is "Walk-maxxing"; the repo is `map-mvp`. Pick one for the post.
+7. **The name.** The app is **footfolio** (all lowercase) in the page title, README and docs; the repo is still `map-mvp`, and the storage keys keep their old `fogwalk:` prefix so saved progress survives.
 
 ---
 

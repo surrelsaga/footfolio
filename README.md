@@ -1,4 +1,4 @@
-# Fog Walk
+# footfolio
 
 A map of your neighbourhood covered in fog. Walk and the fog clears; real places appear as you uncover them, and a narrator gives you riddles about places hidden in the fog. Gemma, a small open model, writes the riddles **on your phone**. Progress never leaves the device.
 

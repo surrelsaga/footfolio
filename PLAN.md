@@ -1,4 +1,4 @@
-# Fog Walk: architecture, phases and decisions
+# footfolio: architecture, phases and decisions
 
 Condensed on 2026-10-11. The per-phase build notes that used to live here (every deviation and review finding) are in git history: `git log -p -- PLAN.md`. This file keeps what you need to understand and change the app.
 
