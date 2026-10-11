@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/logo.jpg" alt="footfolio logo: a pixel-art sneaker" width="480"></p>
+
 # footfolio
 
 **Clear the fog, one walk at a time.**
