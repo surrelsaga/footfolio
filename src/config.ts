@@ -1,5 +1,5 @@
 // Tunable constants. Anything a feature might want to tweak lives here (styling lives in style.css / the layer that draws it).
-export const SUTD: [number, number] = [1.3413, 103.9638];   // map start / debug-walk start
+export const SUTD: [number, number] = [1.3413, 103.9638];   // map start; debug-walk start when the device gives no location
 export const START_ZOOM = 17;
 export const MAX_ZOOM = 19;
 export const TILE_URL = 'https://tile.openstreetmap.org/{z}/{x}/{y}.png';

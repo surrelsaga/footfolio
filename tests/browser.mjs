@@ -34,6 +34,7 @@ const open = async (query = '', setup, { permit = true, ctx: shared, days = 0, q
     const Real = Date, ms = shift * 86400000;
     window.Date = class extends Real { constructor(...a) { if (a.length) super(...a); else super(Real.now() + ms); } static now() { return Real.now() + ms; } };
   }, days);
+  if (permit && query.includes('debug')) await page.setGeolocation({ latitude: 1.3413, longitude: 103.9638, accuracy: 20 });   // the debug walk starts where the device is: put the device at SUTD
   if (setup) await setup(page);
   await page.goto(BASE + query, { waitUntil: 'networkidle2' });
   return page;
@@ -139,6 +140,18 @@ console.log('Phase 1: map, dot, GPS');
   await sleep(1200);
   assert(Number.isFinite((await where(p)).lat), 'tapping the dot itself does not produce NaN');
   await p.close(); t('debug walk ok');
+}
+{ // the debug walk starts where the device is, anywhere; SUTD only when location is blocked
+  const far = await open('?debug', (p) => p.setGeolocation({ latitude: 35.6812, longitude: 139.7671, accuracy: 900 }));   // Tokyo, and a rough reading
+  const s = await where(far);
+  assert(Math.abs(s.lat - 35.6812) < 1e-6 && Math.abs(s.lng - 139.7671) < 1e-6, 'debug starts at the device position');
+  assert.equal(s.accuracy, 10, 'with the debug accuracy, so the fog clears from the first step');
+  assert(await far.evaluate(() => fogMap.isRevealed(35.6812, 139.7671)), 'fog cleared where it starts');
+  await far.close();
+  const blocked = await open('?debug', null, { permit: false }); await sleep(500);
+  const b = await where(blocked);
+  assert(Math.abs(b.lat - 1.3413) < 1e-6 && Math.abs(b.lng - 103.9638) < 1e-6, 'blocked location: debug starts at SUTD');
+  await blocked.close(); t('debug start follows the device ok');
 }
 { // negative multiplier still walks toward the target
   const p = await open('?debug=-10');
