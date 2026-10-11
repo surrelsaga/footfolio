@@ -14,7 +14,7 @@ const SKIP = new Set(['parking', 'parking_space', 'parking_entrance', 'bicycle_p
 // Public servers go down (all but one did while this was being built), so there are three. The first that gives a usable answer wins.
 const ENDPOINTS = ['https://overpass-api.de/api/interpreter', 'https://overpass.openstreetmap.fr/api/interpreter', 'https://overpass.kumi.systems/api/interpreter'];
 // Overpass rejects anonymous clients (406): identify ourselves.
-const HEADERS = { 'content-type': 'application/x-www-form-urlencoded', accept: 'application/json', 'user-agent': 'fog-walk-map/0.1 (https://github.com/surrelsaga/map-mvp; places for a walking game)' };
+const HEADERS = { 'content-type': 'application/x-www-form-urlencoded', accept: 'application/json', 'user-agent': 'footfolio/0.1 (https://github.com/surrelsaga/map-mvp; places for a walking game)' };
 
 export const overpassQuery = (c: LatLng, radius: number) =>
   `[out:json][timeout:40];(${KINDS.map((k) => `nwr["name"]["${k}"](around:${radius},${c.lat},${c.lng});`).join('')});out center tags;`;
